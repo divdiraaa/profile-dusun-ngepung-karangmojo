@@ -1,58 +1,96 @@
 /* ==========================================================
-   STATISTIK COMPONENT
+   STATISTIK — Glassmorphism Band
 ========================================================== */
 .statistik-section {
-  background-color: var(--primary-color);
-  background-image: radial-gradient(circle at top right, rgba(255,255,255,0.05) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
 }
 
-.stat-card {
-  padding: 30px 20px;
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
-  height: 100%;
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
-.stat-card:hover {
-  background: rgba(255,255,255,0.08);
-  transform: translateY(-5px);
-}
-
-.stat-icon {
-  width: 70px;
-  height: 70px;
-  background: rgba(209, 154, 106, 0.2); /* Accent color with opacity */
-  color: var(--accent-color);
-  border-radius: 50%;
+.stat-item {
+  padding: 40px 28px;
+  background: rgba(10, 25, 50, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 20px;
-  transition: var(--transition);
+  text-align: center;
+  transition: all 0.3s var(--easing);
 }
 
-.stat-card:hover .stat-icon {
-  background: var(--accent-color);
-  color: var(--text-light);
-  transform: scale(1.1);
+.stat-item:hover {
+  border-color: rgba(14, 165, 233, 0.35);
+  background: rgba(14, 165, 233, 0.08);
+  transform: translateY(-4px);
+}
+
+.stat-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: var(--accent-dim);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 20px;
+  transition: all 0.3s var(--easing);
+}
+
+.stat-item:hover .stat-icon-wrap {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.stat-number {
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
 }
 
 .counter {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: var(--text-light);
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: var(--text-primary);
 }
 
-.stat-card p {
-  color: rgba(255,255,255,0.7);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 0;
-  letter-spacing: 0.5px;
+.stat-suffix {
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+}
+
+@media (max-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-item { padding: 28px 16px; }
+}
+
+@media (max-width: 400px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; }
 }

@@ -1,60 +1,123 @@
 /* ==========================================================
-   POTENSI COMPONENT
+   POTENSI WISATA — Glassmorphism Cards
 ========================================================== */
-.potensi-section {
-  background-color: #ffffff;
+.potensi-section { position: relative; }
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.potensi-card {
-  border-radius: var(--border-radius);
+.dest-card {
+  background: rgba(5, 15, 30, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   overflow: hidden;
-  background-color: var(--secondary-color);
-  transition: var(--transition);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  transition: all 0.4s var(--easing);
+  cursor: pointer;
 }
 
-.potensi-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow);
+.dest-card:hover {
+  border-color: rgba(14, 165, 233, 0.30);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
 }
 
-.potensi-img {
-  position: relative;
-  height: 240px;
-  overflow: hidden;
+.dest-img {
+  height: 220px; overflow: hidden; position: relative;
 }
 
-.potensi-img svg,
-.potensi-img img {
-  width: 100%;
-  height: 100%;
+.dest-img img, .dest-img svg {
+  width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s var(--easing);
 }
 
-.potensi-card:hover .potensi-img svg,
-.potensi-card:hover .potensi-img img {
-  transform: scale(1.05);
+.dest-card:hover .dest-img img,
+.dest-card:hover .dest-img svg { transform: scale(1.06); }
+
+.dest-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(5,15,30,0.80) 0%, transparent 60%);
 }
 
-.potensi-category {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: var(--text-light);
-  color: var(--primary-color);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.dest-tag {
+  position: absolute; top: 14px; left: 14px;
+  padding: 4px 12px;
+  background: var(--accent); color: #fff;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  border-radius: 9999px;
 }
 
-.potensi-body {
-  padding: 25px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+.dest-rating {
+  position: absolute; bottom: 14px; right: 14px;
+  display: flex; align-items: center; gap: 4px;
+  font-size: 13px; font-weight: 700; color: #fff;
+}
+
+.dest-body { padding: 22px; }
+
+.dest-body h3 {
+  font-size: 19px; font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary); margin-bottom: 8px;
+}
+
+.dest-body p {
+  font-size: 13px; color: var(--text-sec);
+  line-height: 1.65; margin-bottom: 18px;
+}
+
+.dest-meta {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  font-size: 12px; color: var(--text-meta);
+}
+
+.dest-meta-loc {
+  display: flex; align-items: center; gap: 6px;
+}
+
+.dest-meta-loc i { color: var(--accent); }
+
+.dest-link {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-sec);
+  transition: all 0.3s var(--easing); font-size: 12px;
+}
+
+.dest-link:hover {
+  border-color: var(--accent); color: var(--accent);
+  transform: scale(1.1) rotate(45deg);
+}
+
+/* Featured card */
+.dest-card-featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.dest-card-featured .dest-img {
+  height: auto; min-height: 300px;
+}
+
+@media (max-width: 900px) {
+  .destination-grid { grid-template-columns: 1fr 1fr; }
+  .dest-card-featured { grid-column: span 2; grid-template-columns: 1fr; }
+  .dest-card-featured .dest-img { height: 200px; }
+}
+
+@media (max-width: 600px) {
+  .destination-grid { grid-template-columns: 1fr; }
+  .dest-card-featured { grid-column: span 1; }
+  .section-header { grid-template-columns: 1fr; }
+  .section-header-right { align-items: flex-start; }
 }

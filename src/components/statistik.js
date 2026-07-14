@@ -2,47 +2,24 @@ import statistikHtml from './html/statistik.html?raw';
 import '../css/components/statistik.css';
 
 const statistikData = [
-    {
-        icon: "bi-people-fill",
-        number: 5200,
-        suffix: "+",
-        title: "Penduduk"
-    },
-    {
-        icon: "bi-house-door-fill",
-        number: 12,
-        suffix: "",
-        title: "Dusun"
-    },
-    {
-        icon: "bi-shop",
-        number: 150,
-        suffix: "+",
-        title: "UMKM"
-    },
-    {
-        icon: "bi-tree-fill",
-        number: 25,
-        suffix: "",
-        title: "Wisata"
-    }
+    { icon: "bi-people-fill",    number: 5200, suffix: "+", label: "Penduduk" },
+    { icon: "bi-house-door-fill", number: 12,  suffix: "",  label: "Dusun" },
+    { icon: "bi-shop",            number: 150,  suffix: "+", label: "UMKM Aktif" },
+    { icon: "bi-water",           number: 2,    suffix: "",  label: "Pantai Wisata" }
 ];
 
 const generateStatistik = () => {
-    return statistikData.map((item, index) => `
-        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="${index * 100}">
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="bi ${item.icon}"></i>
-                </div>
-                <div class="d-flex justify-content-center align-items-baseline">
-                    <h2 class="counter mb-0" data-target="${item.number}" data-suffix="${item.suffix}">0</h2>
-                    <span class="fs-4 ms-1">${item.suffix}</span>
-                </div>
-                <p class="mt-2 text-uppercase small">${item.title}</p>
+    return statistikData.map((item, i) => `
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="${i * 80}">
+            <div class="stat-icon-wrap">
+                <i class="bi ${item.icon}"></i>
             </div>
+            <div class="stat-number">
+                <span class="counter" data-target="${item.number}">0</span><span class="stat-suffix">${item.suffix}</span>
+            </div>
+            <div class="stat-label">${item.label}</div>
         </div>
-    `).join("");
+    `).join('');
 };
 
 export default function Statistik() {

@@ -1,107 +1,285 @@
-/* ==========================================================
-   GLOBAL VARIABLES (NATURE/EARTHY THEME)
-========================================================== */
+/* ============================================================
+   DESIGN SYSTEM — DESA NGEPUNG
+   Glassmorphism · Inter · Teal Accent · Photo Background
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
 :root {
-  --primary-color: #1a3630; /* Deep nature green */
-  --secondary-color: #f4f1eb; /* Soft beige/off-white */
-  --accent-color: #d19a6a; /* Earthy brown/orange */
-  --text-dark: #2a2a2a;
-  --text-light: #ffffff;
-  --text-muted: #6b7280;
-  
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
-  
-  --transition: all 0.3s ease;
-  --border-radius: 12px;
-  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --accent:       #0ea5e9;          /* Sky/ocean teal — pas untuk desa pantai */
+  --accent-dim:   rgba(14,165,233,0.15);
+  --accent-hover: rgba(14,165,233,0.20);
+  --text-primary: #ffffff;
+  --text-sec:     rgba(255, 255, 255, 0.75);
+  --text-meta:    rgba(255, 255, 255, 0.50);
+  --glass-bg:     rgba(10, 20, 30, 0.55);
+  --glass-bg-lt:  rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur:   blur(16px);
+  --divider:      rgba(255, 255, 255, 0.10);
+  --radius:       16px;
+  --radius-sm:    10px;
+  --easing:       cubic-bezier(0.4, 0, 0.2, 1);
+  --font:         'Inter', system-ui, sans-serif;
+
+  /* Section bg colors — semi-transparent over body bg */
+  --section-dark:   rgba(5, 15, 25, 0.70);
+  --section-medium: rgba(10, 25, 40, 0.60);
+  --section-light:  rgba(15, 30, 50, 0.45);
 }
 
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+/* Body: Fixed photo background */
 body {
-  font-family: var(--font-body);
-  color: var(--text-dark);
-  background-color: var(--secondary-color);
+  font-family: var(--font);
+  color: var(--text-primary);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+
+  /* Background foto pantai dari Unsplash (free license) */
+  /* TODO: Ganti dengan foto asli dari /public/images/bg-main.jpg */
+  background-image:
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  /* Overlay gelap agar glassmorphism menonjol */
+  background-color: #050f1a;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* Fallback dark layer di atas image */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 15, 25, 0.35) 0%,
+    rgba(5, 15, 25, 0.20) 50%,
+    rgba(5, 15, 25, 0.50) 100%
+  );
+  pointer-events: none;
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent-color);
-  transition: var(--transition);
+/* Semua konten di atas overlay */
+#app { position: relative; z-index: 1; }
+
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Glass Surface (untuk sections) ─────────────────────────── */
+.glass-section {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
 }
 
-a:hover {
-  color: var(--primary-color);
+/* ── Glass Card ─────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg-lt);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+/* ── Glass Button ───────────────────────────────────────────── */
+.btn-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s var(--easing);
+  white-space: nowrap;
 }
 
-.section-padding {
-  padding: 80px 0;
+.btn-glass:hover {
+  background: rgba(14, 165, 233, 0.20);
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15);
+  transform: scale(1.04);
+  color: var(--text-primary);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 3rem;
-  font-family: var(--font-body);
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
+/* ── Accent Button ──────────────────────────────────────────── */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
   border: none;
-  border-radius: 30px;
-  padding: 12px 30px;
-  font-weight: 500;
-  transition: var(--transition);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s var(--easing);
 }
 
-.btn-primary:hover {
-  background-color: #112520;
+.btn-accent:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.40);
+  color: #fff;
 }
 
-.btn-outline {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  border-radius: 30px;
-  padding: 10px 28px;
-  font-weight: 500;
-  background: transparent;
-  transition: var(--transition);
+/* ── Section Padding ────────────────────────────────────────── */
+.section    { padding: 100px 0; }
+.section-sm { padding: 60px 0; }
+
+/* ── Container ──────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.btn-outline:hover {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+/* ── Accent Line / Divider ──────────────────────────────────── */
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 24px;
 }
 
-/* Utilities */
-.text-primary-color { color: var(--primary-color) !important; }
-.text-accent { color: var(--accent-color) !important; }
-.bg-primary-color { background-color: var(--primary-color) !important; }
-.bg-secondary { background-color: var(--secondary-color) !important; }
+/* ── Section Label ──────────────────────────────────────────── */
+.section-label-sm {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  margin-bottom: 16px;
+}
 
-/* Flex Center */
-.flex-center {
+/* ── Section Title ──────────────────────────────────────────── */
+.section-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.section-title em { color: var(--accent); font-style: italic; }
+
+/* ── Section Header 2-col ───────────────────────────────────── */
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.section-header-left .accent-line { margin-bottom: 16px; }
+
+.section-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+/* ── Floating Arrow ─────────────────────────────────────────── */
+.float-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.20);
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Body Text ──────────────────────────────────────────────── */
+.body-lg {
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--text-sec);
+}
+
+.body-sm {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-sec);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection { background: var(--accent); color: #fff; }
+
+/* ── Progress Bar ───────────────────────────────────────────── */
+#progressBar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ── Back to Top ────────────────────────────────────────────── */
+#backToTop {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.3s var(--easing);
+  z-index: 999;
+}
+
+#backToTop.show  { opacity: 1; visibility: visible; transform: translateY(0); }
+#backToTop:hover { transform: scale(1.1); box-shadow: 0 8px 24px rgba(14,165,233,0.4); }
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section-header { grid-template-columns: 1fr; gap: 24px; }
+  .section-header-right { align-items: flex-start; }
+  .body-lg { font-size: 15px; }
 }

@@ -1,0 +1,48 @@
+/* ==========================================================
+   BOOTSTRAP & SWIPER OVERRIDES FOR DARK THEME
+========================================================== */
+
+/* Reset Bootstrap base conflicts */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font) !important;
+  background-color: var(--bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Swiper overrides */
+.swiper { width: 100%; }
+
+.swiper-slide { height: auto; }
+
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.25);
+  opacity: 1;
+  width: 6px;
+  height: 6px;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--accent);
+  width: 20px;
+  border-radius: 3px;
+  transition: width 0.3s var(--easing);
+}
+
+/* Bootstrap dropdown dark override */
+.dropdown-menu {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+}
+
+.dropdown-item {
+  color: var(--text-sec);
+  font-size: 13px;
+}
+
+.dropdown-item:hover {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+}
