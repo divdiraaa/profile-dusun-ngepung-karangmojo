@@ -2,60 +2,29 @@ import agendaHtml from './html/agenda.html?raw';
 import '../css/components/agenda.css';
 
 const agenda = [
-    {
-        tanggal: "05",
-        bulan: "JAN",
-        judul: "Musyawarah Desa",
-        lokasi: "Balai Desa",
-        jam: "08.00 WIB"
-    },
-    {
-        tanggal: "12",
-        bulan: "JAN",
-        judul: "Kerja Bakti",
-        lokasi: "Lapangan Desa",
-        jam: "07.00 WIB"
-    },
-    {
-        tanggal: "18",
-        bulan: "JAN",
-        judul: "Festival Budaya",
-        lokasi: "Alun-alun Desa",
-        jam: "09.00 WIB"
-    },
-    {
-        tanggal: "25",
-        bulan: "JAN",
-        judul: "Pelatihan UMKM",
-        lokasi: "Gedung Serbaguna",
-        jam: "10.00 WIB"
-    },
-    {
-        tanggal: "02",
-        bulan: "FEB",
-        judul: "Posyandu",
-        lokasi: "Balai RW",
-        jam: "08.00 WIB"
-    }
+    { tanggal: "05", bulan: "AGS", judul: "Musyawarah Desa", lokasi: "Balai Desa Ngepung", jam: "08.00 WIB" },
+    { tanggal: "12", bulan: "AGS", judul: "Festival Sedekah Laut", lokasi: "Pantai Kukup", jam: "07.00 WIB" },
+    { tanggal: "18", bulan: "AGS", judul: "Pelatihan Digital UMKM", lokasi: "Gedung Serbaguna", jam: "09.00 WIB" },
+    { tanggal: "24", bulan: "AGS", judul: "Kerja Bakti Desa", lokasi: "Seluruh Dusun", jam: "06.30 WIB" },
+    { tanggal: "02", bulan: "SEP", judul: "Posyandu Rutin", lokasi: "Balai RW", jam: "08.00 WIB" }
 ];
 
 const generateAgenda = () => {
     return agenda.map(item => `
-        <div class="swiper-slide h-auto">
+        <div class="swiper-slide h-auto" style="padding-bottom: 4px;">
             <div class="agenda-card">
-                <div class="agenda-date">
-                    <h2>${item.tanggal}</h2>
-                    <span>${item.bulan}</span>
+                <div class="agenda-date-block">
+                    <div class="agenda-date-num">${item.tanggal}</div>
+                    <div class="agenda-date-month">${item.bulan}</div>
                 </div>
-                <div class="agenda-body">
-                    <h4>${item.judul}</h4>
-                    <p><i class="bi bi-geo-alt-fill"></i> ${item.lokasi}</p>
-                    <p><i class="bi bi-clock-fill"></i> ${item.jam}</p>
-                    <a href="#" class="text-accent small fw-bold mt-2 d-inline-block">Lihat Detail <i class="bi bi-arrow-right"></i></a>
-                </div>
+                <h4>${item.judul}</h4>
+                <div class="agenda-info"><i class="bi bi-geo-alt-fill"></i><span>${item.lokasi}</span></div>
+                <div class="agenda-info"><i class="bi bi-clock-fill"></i><span>${item.jam}</span></div>
+                <div class="spacer"></div>
+                <a href="#" class="agenda-link">Detail Kegiatan <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
-    `).join("");
+    `).join('');
 };
 
 export default function Agenda() {
