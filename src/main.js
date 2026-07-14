@@ -1,721 +1,251 @@
 /* ==========================================================
-   WEBSITE DESA WISATA
-   MAIN.JS
-   VERSI PRODUCTION
+   DESA NGEPUNG — MAIN.JS
+   Dark Glassmorphism Design System
 ========================================================== */
 
-/* ==========================================================
-   IMPORT CSS
-========================================================== */
+/* ── Global CSS ─────────────────────────────────────────────── */
+import './css/style.css';
+import './css/overrides.css';
 
-import "./css/style.css";
-// import "./css/responsive.css";
-// import "./css/animation.css";
 
-/* ==========================================================
-   BOOTSTRAP
-========================================================== */
+/* ── Bootstrap ──────────────────────────────────────────────── */
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+/* ── Libraries ──────────────────────────────────────────────── */
+import 'animate.css';
+import 'aos/dist/aos.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'glightbox/dist/css/glightbox.min.css';
 
-/* ==========================================================
-   LIBRARY CSS
-========================================================== */
+/* ── Library JS ─────────────────────────────────────────────── */
+import AOS from 'aos';
+import { Swiper } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import GLightbox from 'glightbox';
 
-import "animate.css";
-import "aos/dist/aos.css";
+/* ── Components ─────────────────────────────────────────────── */
+import Preloader from './components/preloader';
+import Navbar    from './components/navbar';
+import Hero      from './components/hero';
+import Tentang   from './components/tentang';
+import Services  from './components/services';
+import Potensi   from './components/potensi';
+import Statistik from './components/statistik';
+import Berita    from './components/berita';
+import Agenda    from './components/agenda';
+import Galeri    from './components/galeri';
+import Maps      from './components/maps';
+import Footer    from './components/footer';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import "glightbox/dist/css/glightbox.min.css";
-
-/* ==========================================================
-   LIBRARY JS
-========================================================== */
-
-import AOS from "aos";
-
-import { Swiper } from "swiper";
-
-import {
-
-  Navigation,
-
-  Pagination,
-
-  Autoplay
-
-} from "swiper/modules";
-
-import GLightbox from "glightbox";
-
-/* ==========================================================
-   COMPONENT
-========================================================== */
-
-import Preloader from "./components/preloader";
-
-import Navbar from "./components/navbar";
-
-import Hero from "./components/hero";
-
-import Services from "./components/services";
-
-import Tentang from "./components/tentang";
-
-import Potensi from "./components/potensi";
-
-import Berita from "./components/berita";
-
-import Agenda from "./components/agenda";
-
-import Statistik from "./components/statistik";
-
-import Galeri from "./components/galeri";
-
-import Maps from "./components/maps";
-
-import Footer from "./components/footer";
-
-/* ==========================================================
-   RENDER WEBSITE
-========================================================== */
-
-const app = document.querySelector("#app");
+/* ── Render ─────────────────────────────────────────────────── */
+const app = document.getElementById('app');
 
 app.innerHTML = `
-
-${Preloader()}
-
-${Navbar()}
-
-${Hero()}
-
-${Services()}
-
-${Tentang()}
-
-${Potensi()}
-
-${Berita()}
-
-${Agenda()}
-
-${Statistik()}
-
-${Galeri()}
-
-${Maps()}
-
-${Footer()}
-
+  ${Preloader()}
+  ${Navbar()}
+  <main>
+    ${Hero()}
+    ${Tentang()}
+    ${Services()}
+    ${Potensi()}
+    ${Statistik()}
+    ${Berita()}
+    ${Agenda()}
+    ${Galeri()}
+    ${Maps()}
+  </main>
+  ${Footer()}
 `;
 
-/* ==========================================================
-   ELEMENT
-========================================================== */
+/* ── Init: AOS ──────────────────────────────────────────────── */
+AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
 
-const navbar = document.querySelector(".navbar");
+window.addEventListener('resize', () => AOS.refresh());
 
-const hero = document.querySelector("#hero");
+/* ── Init: GLightbox ────────────────────────────────────────── */
+GLightbox({ selector: '.galeri-item', touchNavigation: true });
 
-const heroImage = document.querySelector(".hero-image");
-
-const preloader = document.getElementById("preloader");
-
-const backToTop = document.getElementById("backToTop");
-
-const counters = document.querySelectorAll(".counter");
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll(".nav-link");
-
-const progressBar = document.getElementById("progressBar");
-
-/* ==========================================================
-   INIT AOS
-========================================================== */
-
-AOS.init({
-
-  duration: 1000,
-
-  once: true,
-
-  offset: 120,
-
-  easing: "ease-in-out"
-
-});
-
-AOS.refresh();
-
-/* ==========================================================
-   INIT GLIGHTBOX
-========================================================== */
-
-GLightbox({
-
-  selector: ".gallery"
-
-});
-
-/* ==========================================================
-   INIT SWIPER
-========================================================== */
-
-new Swiper(".agendaSwiper", {
-
-  modules: [
-
-    Navigation,
-
-    Pagination,
-
-    Autoplay
-
-  ],
-
-  slidesPerView: 3,
-
-  spaceBetween: 30,
-
+/* ── Init: Swiper Agenda ────────────────────────────────────── */
+new Swiper('.agendaSwiper', {
+  modules: [Navigation, Pagination, Autoplay],
+  slidesPerView: 1,
+  spaceBetween: 20,
   loop: true,
-
-  autoplay: {
-
-    delay: 3500,
-
-    disableOnInteraction: false
-
-  },
-
-  navigation: {
-
-    nextEl: ".agenda-next",
-
-    prevEl: ".agenda-prev"
-
-  },
-
-  pagination: {
-
-    el: ".agenda-pagination",
-
-    clickable: true
-
-  },
-
+  autoplay: { delay: 3500, disableOnInteraction: false },
+  navigation: { nextEl: '.agenda-next', prevEl: '.agenda-prev' },
+  pagination: { el: '.agenda-pagination', clickable: true, type: 'bullets' },
   breakpoints: {
-
-    0: {
-
-      slidesPerView: 1
-
-    },
-
-    768: {
-
-      slidesPerView: 2
-
-    },
-
-    1200: {
-
-      slidesPerView: 3
-
-    }
-
+    640:  { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
   }
-
 });
 
-/* ==========================================================
-   FUNCTION : NAVBAR SCROLL
-========================================================== */
-
+/* ── Navbar: Scroll Behavior ────────────────────────────────── */
 function initNavbar() {
-
+  const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  window.addEventListener("scroll", () => {
+  let lastY = 0;
 
-    navbar.classList.toggle("scrolled", window.scrollY > 80);
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
 
+    // Scrolled state
+    navbar.classList.toggle('scrolled', y > 60);
+
+    // Hide on scroll down, show on scroll up
+    if (y > 120) {
+      navbar.style.transform = y > lastY ? 'translateY(-100%)' : 'translateY(0)';
+    } else {
+      navbar.style.transform = 'translateY(0)';
+    }
+
+    lastY = y;
   });
-
 }
 
 initNavbar();
 
-/* ==========================================================
-   FUNCTION : SMOOTH SCROLL
-========================================================== */
-
-function initSmoothScroll() {
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-      const target = document.querySelector(this.getAttribute("href"));
-
-      if (!target) return;
-
-      e.preventDefault();
-
-      target.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "start"
-
-      });
-
-    });
-
-  });
-
-}
-
-initSmoothScroll();
-
-/* ==========================================================
-   FUNCTION : PROGRESS BAR
-========================================================== */
-
-function initProgressBar() {
-
-  if (!progressBar) return;
-
-  window.addEventListener("scroll", () => {
-
-    const totalHeight =
-
-      document.documentElement.scrollHeight -
-
-      window.innerHeight;
-
-    const progress =
-
-      (window.scrollY / totalHeight) * 100;
-
-    progressBar.style.width = progress + "%";
-
-  });
-
-}
-
-initProgressBar();
-
-/* ==========================================================
-   FUNCTION : ACTIVE MENU
-========================================================== */
-
+/* ── Navbar: Active Link ────────────────────────────────────── */
 function initActiveMenu() {
-
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
   if (!sections.length || !navLinks.length) return;
 
-  window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-      const sectionTop = section.offsetTop - 150;
-
-      const sectionHeight = section.offsetHeight;
-
-      if (
-
-        window.scrollY >= sectionTop &&
-
-        window.scrollY < sectionTop + sectionHeight
-
-      ) {
-
-        current = section.id;
-
-      }
-
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 180) current = s.id;
     });
-
-    navLinks.forEach(link => {
-
-      link.classList.remove("active");
-
-      if (link.getAttribute("href") === "#" + current) {
-
-        link.classList.add("active");
-
-      }
-
+    navLinks.forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === '#' + current) l.classList.add('active');
     });
-
   });
-
 }
 
 initActiveMenu();
 
-/* ==========================================================
-   FUNCTION : HERO PARALLAX
-========================================================== */
+/* ── Navbar: Mobile Toggle ──────────────────────────────────── */
+function initMobileMenu() {
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  if (!toggle || !mobile) return;
 
-function initHeroParallax() {
-
-  if (!heroImage) return;
-
-  window.addEventListener("scroll", () => {
-
-    const offset = window.scrollY * 0.15;
-
-    heroImage.style.transform = `translateY(${offset}px)`;
-
+  toggle.addEventListener('click', () => {
+    mobile.classList.toggle('open');
+    const icon = toggle.querySelector('i');
+    icon.className = mobile.classList.contains('open') ? 'bi bi-x-lg' : 'bi bi-list';
   });
 
-}
-
-initHeroParallax();
-
-/* ==========================================================
-   FUNCTION : COUNTER
-========================================================== */
-
-function startCounter() {
-
-  counters.forEach(counter => {
-
-    const target = Number(counter.dataset.target);
-
-    const suffix = counter.dataset.suffix || "";
-
-    let current = 0;
-
-    const increment = Math.ceil(target / 100);
-
-    function updateCounter() {
-
-      current += increment;
-
-      if (current >= target) {
-
-        counter.textContent = target + suffix;
-
-      } else {
-
-        counter.textContent = current + suffix;
-
-        requestAnimationFrame(updateCounter);
-
-      }
-
-    }
-
-    updateCounter();
-
-  });
-
-}
-
-const statistikSection = document.querySelector("#statistik");
-
-if (statistikSection) {
-
-  const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        startCounter();
-
-        observer.unobserve(statistikSection);
-
-      }
-
+  // Close on link click
+  mobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobile.classList.remove('open');
+      const icon = toggle.querySelector('i');
+      icon.className = 'bi bi-list';
     });
-
   });
-
-  observer.observe(statistikSection);
-
 }
 
-/* ==========================================================
-   FUNCTION : HERO FADE
-========================================================== */
+initMobileMenu();
 
-function initHeroFade() {
-
-  if (!hero) return;
-
-  window.addEventListener("scroll", () => {
-
-    const opacity = 1 - window.scrollY / 800;
-
-    hero.style.opacity = opacity > 0 ? opacity : 0;
-
+/* ── Smooth Scroll ──────────────────────────────────────────── */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
-
 }
 
-initHeroFade();
+initSmoothScroll();
 
-/* ==========================================================
-   FUNCTION : LAZY IMAGE
-========================================================== */
-
-function initLazyImage() {
-
-  document.querySelectorAll("img").forEach(img => {
-
-    img.loading = "lazy";
-
-    img.decoding = "async";
-
+/* ── Progress Bar ───────────────────────────────────────────── */
+function initProgressBar() {
+  const bar = document.getElementById('progressBar');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = pct + '%';
   });
-
 }
 
-initLazyImage();
-/* ==========================================================
-   FUNCTION : PRELOADER
-========================================================== */
+initProgressBar();
 
-function initPreloader() {
+/* ── Counter Animation ──────────────────────────────────────── */
+function startCounters() {
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    let cur = 0;
+    const step = Math.ceil(target / 80);
 
-  if (!preloader) return;
-
-  window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-      preloader.classList.add("hide");
-
-      setTimeout(() => {
-
-        preloader.remove();
-
-      }, 600);
-
-    }, 800);
-
+    const tick = () => {
+      cur += step;
+      if (cur >= target) { el.textContent = target; return; }
+      el.textContent = cur;
+      requestAnimationFrame(tick);
+    };
+    tick();
   });
-
 }
 
-initPreloader();
+const statsSection = document.querySelector('#statistik');
+if (statsSection) {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { startCounters(); } });
+  }, { threshold: 0.4 }).observe(statsSection);
+}
 
-/* ==========================================================
-   FUNCTION : BACK TO TOP
-========================================================== */
-
+/* ── Back to Top ────────────────────────────────────────────── */
 function initBackToTop() {
-
-  if (!backToTop) return;
-
-  window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 400) {
-
-      backToTop.classList.add("show");
-
-    } else {
-
-      backToTop.classList.remove("show");
-
-    }
-
-  });
-
-  backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-
-      top: 0,
-
-      behavior: "smooth"
-
-    });
-
-  });
-
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 500));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
 initBackToTop();
 
-/* ==========================================================
-   FUNCTION : HIDE NAVBAR
-========================================================== */
-
-function initHideNavbar() {
-
-  if (!navbar) return;
-
-  let lastScroll = 0;
-
-  window.addEventListener("scroll", () => {
-
-    const current = window.pageYOffset;
-
-    if (current <= 100) {
-
-      navbar.style.top = "0";
-
-      return;
-
-    }
-
-    if (current > lastScroll) {
-
-      navbar.style.top = "-100px";
-
-    } else {
-
-      navbar.style.top = "0";
-
-    }
-
-    lastScroll = current;
-
+/* ── Preloader ──────────────────────────────────────────────── */
+function initPreloader() {
+  const pl = document.getElementById('preloader');
+  if (!pl) return;
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      pl.classList.add('hide');
+      setTimeout(() => pl.remove(), 700);
+    }, 900);
   });
-
 }
 
-initHideNavbar();
+initPreloader();
 
-/* ==========================================================
-   FUNCTION : REVEAL ANIMATION
-========================================================== */
-
-function initRevealAnimation() {
-
-  const revealItems = document.querySelectorAll(".reveal");
-
-  if (!revealItems.length) return;
-
-  const revealObserver = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("active");
-
-      }
-
-    });
-
-  }, {
-
-    threshold: 0.15
-
+/* ── Hero Scroll Arrow ──────────────────────────────────────── */
+const heroScroll = document.querySelector('.hero-scroll');
+if (heroScroll) {
+  heroScroll.addEventListener('click', () => {
+    document.querySelector('#tentang')?.scrollIntoView({ behavior: 'smooth' });
   });
-
-  revealItems.forEach(item => revealObserver.observe(item));
-
 }
 
-initRevealAnimation();
-
-/* ==========================================================
-   FUNCTION : DARK MODE
-========================================================== */
-
-function initDarkMode() {
-
-  const toggle = document.getElementById("themeToggle");
-
-  if (!toggle) return;
-
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme === "dark") {
-
-    document.body.classList.add("dark-mode");
-
-  }
-
-  toggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    localStorage.setItem(
-
-      "theme",
-
-      document.body.classList.contains("dark-mode")
-
-        ? "dark"
-
-        : "light"
-
-    );
-
-  });
-
-}
-
-initDarkMode();
-
-/* ==========================================================
-   FUNCTION : PERFORMANCE
-========================================================== */
-
-function initPerformance() {
-
-  document.querySelectorAll("img").forEach(img => {
-
-    img.setAttribute("loading", "lazy");
-
-    img.setAttribute("decoding", "async");
-
-  });
-
-}
-
-initPerformance();
-
-/* ==========================================================
-   FUNCTION : ERROR HANDLER
-========================================================== */
-
-window.addEventListener("error", (e) => {
-
-  console.warn("Website Error :", e.message);
-
+/* ── Lazy Images ────────────────────────────────────────────── */
+document.querySelectorAll('img').forEach(img => {
+  img.loading = 'lazy';
+  img.decoding = 'async';
 });
 
-/* ==========================================================
-   FUNCTION : RESIZE
-========================================================== */
+/* ── Error Handler ──────────────────────────────────────────── */
+window.addEventListener('error', e => console.warn('[Desa Ngepung]', e.message));
 
-window.addEventListener("resize", () => {
-
-  AOS.refresh();
-
-});
-
-/* ==========================================================
-   WEBSITE READY
-========================================================== */
-
-window.addEventListener("DOMContentLoaded", () => {
-
-  console.log("====================================");
-  console.log(" WEBSITE DESA WISATA ");
-  console.log(" Production Version");
-  console.log(" Vite");
-  console.log(" Bootstrap 5");
-  console.log(" Swiper");
-  console.log(" AOS");
-  console.log(" GLightbox");
-  console.log("====================================");
-
-});
+/* ── Console Brand ──────────────────────────────────────────── */
+console.log('%c Desa Ngepung ', 'background:#ff5e00;color:#fff;font-weight:bold;font-size:16px;border-radius:4px;padding:4px 12px;');
+console.log('%c Gunung Kidul · UNESCO Geopark Gunung Sewu ', 'color:#ff5e00;font-size:12px;');
