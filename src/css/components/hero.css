@@ -1,0 +1,82 @@
+/* ==========================================================
+   HERO COMPONENT
+========================================================== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg svg,
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(26, 54, 48, 0.9) 0%, rgba(26, 54, 48, 0.4) 100%);
+  z-index: 2;
+}
+
+.hero-section .container {
+  z-index: 3;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: var(--text-light);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 540px;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.hero-card {
+  color: var(--text-dark);
+  position: relative;
+  border-left: 4px solid var(--accent-color);
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.hero-card:hover {
+  transform: translateY(0);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.tracking-wider {
+  letter-spacing: 0.1em;
+}
+
+.hero-scroll-indicator {
+  z-index: 3;
+  opacity: 0.8;
+}

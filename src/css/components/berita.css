@@ -1,0 +1,119 @@
+/* ==========================================================
+   BERITA COMPONENT
+========================================================== */
+.featured-news {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+}
+
+.featured-news-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.featured-news-bg svg,
+.featured-news-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featured-news:hover .featured-news-bg svg,
+.featured-news:hover .featured-news-bg img {
+  transform: scale(1.05);
+}
+
+.featured-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(26,54,48,0.9) 0%, rgba(26,54,48,0) 80%);
+  z-index: 2;
+}
+
+.featured-content {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  padding: 40px;
+  z-index: 3;
+  color: var(--text-light);
+}
+
+.news-category {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-content h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.featured-content p {
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.news-meta {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.news-list-item {
+  display: flex;
+  background: var(--text-light);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  gap: 15px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.news-list-item:hover {
+  transform: translateX(10px);
+}
+
+.news-list-img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-list-img svg,
+.news-list-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-info h5 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  line-height: 1.4;
+  font-family: var(--font-body);
+}
+
+.news-info small {
+  color: var(--text-muted);
+}

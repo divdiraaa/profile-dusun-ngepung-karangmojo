@@ -1,0 +1,87 @@
+/* ==========================================================
+   NAVBAR COMPONENT
+========================================================== */
+.navbar {
+  padding: 20px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+  z-index: 1030;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.brand-subtitle {
+  color: rgba(255,255,255,0.8);
+  transition: var(--transition);
+}
+
+.navbar.scrolled .brand-title {
+  color: var(--primary-color);
+}
+
+.navbar.scrolled .brand-subtitle {
+  color: var(--text-muted);
+}
+
+.nav-link {
+  color: var(--text-light) !important;
+  font-weight: 500;
+  margin: 0 5px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.navbar.scrolled .nav-link {
+  color: var(--text-dark) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-color) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 20px;
+}
+
+.navbar.scrolled .navbar-toggler i {
+  color: var(--primary-color);
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    background: var(--primary-color);
+  }
+  .navbar-collapse {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+  }
+  .navbar.scrolled .navbar-collapse {
+    background: white;
+  }
+}
