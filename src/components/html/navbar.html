@@ -1,8 +1,28 @@
 <div id="progressBar"></div>
 
+<!-- Top Bar — Info kontak & jam layanan -->
+<div class="top-bar" id="topBar">
+  <div class="container">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span><i class="bi bi-geo-alt-fill"></i> Tanjungsari, Gunung Kidul, DIY</span>
+        <span class="top-bar-divider"></span>
+        <span><i class="bi bi-clock-fill"></i> Senin–Jumat: 08.00–15.00 WIB</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navbar -->
 <header class="navbar-wrap" id="navbar">
   <div class="container">
-    <nav class="navbar-inner">
+    <nav class="navbar-inner" role="navigation" aria-label="Navigasi utama">
       <!-- Logo -->
       <a class="nav-logo" href="#hero">
         <div class="nav-logo-icon">N</div>
@@ -25,22 +45,22 @@
       <!-- Right CTA -->
       <div class="nav-right">
         <a href="#maps" class="btn-glass nav-cta-desk">Hubungi Kami <i class="bi bi-arrow-up-right"></i></a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMobile">
           <i class="bi bi-list"></i>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Dropdown -->
-    <div class="nav-mobile" id="navMobile">
-      <a href="#hero">Beranda</a>
-      <a href="#tentang">Tentang Desa</a>
-      <a href="#potensi">Wisata</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#berita">Berita</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#maps" style="color: var(--accent); font-weight: 600;">Hubungi Kami</a>
+    <div class="nav-mobile" id="navMobile" role="menu">
+      <a href="#hero" role="menuitem">Beranda</a>
+      <a href="#tentang" role="menuitem">Tentang Desa</a>
+      <a href="#potensi" role="menuitem">Wisata</a>
+      <a href="#layanan" role="menuitem">Layanan</a>
+      <a href="#berita" role="menuitem">Berita</a>
+      <a href="#agenda" role="menuitem">Agenda</a>
+      <a href="#galeri" role="menuitem">Galeri</a>
+      <a href="#maps" class="nav-mobile-cta" role="menuitem">Hubungi Kami <i class="bi bi-arrow-up-right"></i></a>
     </div>
   </div>
 </header>

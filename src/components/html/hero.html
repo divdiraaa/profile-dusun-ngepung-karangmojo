@@ -3,58 +3,108 @@
   <!-- Overlay for readability -->
   <div class="hero-overlay"></div>
 
-  <!-- Main Content -->
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-tagline">
-        Desa Wisata · Tanjungsari · Gunung Kidul · DIY
-      </div>
+  <!-- Animated glow effects -->
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
 
-      <h1 class="hero-title">
-        Pantai Eksotis<br/>
-        <span class="accent-word">Alam Karst</span><br/>
-        Gunung Sewu
-      </h1>
-
-      <p class="hero-desc">
-        Desa Ngepung — destinasi wisata bahari dan alam karst di kawasan Geopark Gunung Sewu yang diakui UNESCO. Rumah dari Pantai Mesra, Pantai Kukup, dan kearifan budaya lokal yang otentik.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#potensi" class="btn-accent">
-          Jelajahi Wisata <i class="bi bi-arrow-down"></i>
-        </a>
-        <a href="#tentang" class="btn-glass">
-          Profil Desa <i class="bi bi-arrow-right"></i>
-        </a>
-      </div>
-    </div>
+  <!-- Decorative geometric elements -->
+  <div class="hero-deco">
+    <div class="hero-deco-line hero-deco-line-1"></div>
+    <div class="hero-deco-line hero-deco-line-2"></div>
+    <div class="hero-deco-circle"></div>
   </div>
 
-  <!-- Corner Metadata Bottom -->
-  <div class="hero-meta-bottom">
-    <div class="container">
-      <div class="hero-meta-inner">
-        <div class="hero-meta-left">
-          <div>Jl. Raya Desa Ngepung, Tanjungsari</div>
-          <div>Gunung Kidul, Daerah Istimewa Yogyakarta</div>
-          <div style="color: var(--accent); margin-top: 4px; font-weight: 600;">UNESCO Geopark Gunung Sewu</div>
+  <!-- Main Content — uses flexbox to push meta card to bottom naturally -->
+  <div class="hero-layout">
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-content-grid">
+          <div class="hero-content-left">
+            <!-- UNESCO Badge -->
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+              <i class="bi bi-globe-americas"></i>
+              <span>UNESCO Global Geopark — Gunung Sewu</span>
+            </div>
+
+            <div class="hero-tagline" data-aos="fade-up" data-aos-delay="200">
+              Desa Wisata · Tanjungsari · Gunung Kidul · DIY
+            </div>
+
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+              Pantai Eksotis<br/>
+              <span class="accent-word">Alam Karst</span><br/>
+              Gunung Sewu
+            </h1>
+
+            <p class="hero-desc" data-aos="fade-up" data-aos-delay="400">
+              Desa Ngepung — destinasi wisata bahari dan alam karst di kawasan Geopark Gunung Sewu yang diakui UNESCO. Rumah dari Pantai Mesra, Pantai Kukup, dan kearifan budaya lokal yang otentik.
+            </p>
+
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+              <a href="#potensi" class="btn-accent">
+                Jelajahi Wisata <i class="bi bi-arrow-down"></i>
+              </a>
+              <a href="#tentang" class="btn-glass">
+                Profil Desa <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tempat untuk gambar desa (Uncomment tag img untuk menggunakan gambar) -->
+          <div class="hero-content-right" data-aos="fade-left" data-aos-delay="600">
+            <div class="hero-image-wrapper">
+              <!-- <img src="/images/hero-desa.jpg" alt="Pemandangan Desa Ngepung" class="hero-image-actual" /> -->
+              
+              <!-- Placeholder SVG -->
+              <svg viewBox="0 0 400 300" class="hero-placeholder-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" rx="24" fill="var(--glass-bg-lt)" stroke="var(--glass-border)" stroke-width="2" stroke-dasharray="10 10"/>
+                <path d="M200 120C183.431 120 170 133.431 170 150C170 166.569 183.431 180 200 180C216.569 180 230 166.569 230 150C230 133.431 216.569 120 200 120ZM200 168C190.059 168 182 159.941 182 150C182 140.059 190.059 132 200 132C209.941 132 218 140.059 218 150C218 159.941 209.941 168 200 168Z" fill="var(--text-meta)"/>
+                <path d="M260 100H140C128.954 100 120 108.954 120 120V180C120 191.046 128.954 200 140 200H260C271.046 200 280 191.046 280 180V120C280 108.954 271.046 100 260 100ZM268 180C268 184.418 264.418 188 260 188H140C135.582 188 132 184.418 132 180V120C132 115.582 135.582 112 140 112H260C264.418 112 268 115.582 268 120V180Z" fill="var(--text-meta)"/>
+                <text x="50%" y="225" text-anchor="middle" fill="var(--text-meta)" font-size="14" font-weight="600" font-family="sans-serif">Tempat Gambar Desa</text>
+              </svg>
+            </div>
+          </div>
         </div>
-        <div class="hero-meta-right">
-          <div class="stat">
-            <div class="stat-num">5.2K</div>
-            <div class="stat-label">Penduduk</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <div class="stat-num">2+</div>
-            <div class="stat-label">Pantai</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="float-arrow">
-              <i class="bi bi-arrow-down" style="font-size: 14px; color: var(--text-sec);"></i>
+      </div>
+    </div>
+
+    <!-- Bottom metadata bar — part of flex layout, NOT absolute -->
+    <div class="hero-meta-bottom">
+      <div class="container">
+        <div class="hero-meta-card">
+          <div class="hero-meta-inner">
+            <div class="hero-meta-left">
+              <div class="hero-meta-address">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <div>Jl. Raya Desa Ngepung, Tanjungsari</div>
+                  <div>Gunung Kidul, Daerah Istimewa Yogyakarta</div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-meta-divider"></div>
+            <div class="hero-meta-right">
+              <div class="stat">
+                <div class="stat-num">5.2K</div>
+                <div class="stat-label">Penduduk</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <div class="stat-num">2+</div>
+                <div class="stat-label">Pantai</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <div class="stat-num">150+</div>
+                <div class="stat-label">UMKM</div>
+              </div>
+              <div class="stat-divider hero-scroll-divider"></div>
+              <div class="hero-scroll">
+                <span>Scroll</span>
+                <div class="float-arrow">
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
