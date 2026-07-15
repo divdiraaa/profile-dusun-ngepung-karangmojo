@@ -8,9 +8,9 @@
 
 .maps-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 48px;
-  align-items: start;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: stretch;
 }
 
 .contact-info-box {
@@ -21,6 +21,18 @@
   border-top: 2px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  min-height: 400px;
+  width: 100%;
 }
 
 .contact-info-box h2 {
