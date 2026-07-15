@@ -21,13 +21,13 @@ body {
   opacity: 1;
   width: 6px;
   height: 6px;
+  transition: all 0.3s var(--easing);
 }
 
 .swiper-pagination-bullet-active {
   background: var(--accent);
   width: 20px;
   border-radius: 3px;
-  transition: width 0.3s var(--easing);
 }
 
 /* Bootstrap dropdown dark override */
@@ -46,3 +46,6 @@ body {
   background: var(--glass-bg);
   color: var(--text-primary);
 }
+
+/* Override Bootstrap .row negative margins if present */
+.row { --bs-gutter-x: 0; --bs-gutter-y: 0; }
