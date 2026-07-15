@@ -4,20 +4,21 @@
 .agenda-section { position: relative; }
 
 .agenda-card {
-  background: rgba(5, 15, 30, 0.60);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--glass-deep);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   padding: 26px; height: 100%;
   display: flex; flex-direction: column;
-  transition: all 0.3s var(--easing);
+  transition: all 0.35s var(--easing);
 }
 
 .agenda-card:hover {
-  border-color: rgba(14, 165, 233, 0.30);
+  border-color: var(--glass-border-accent);
   transform: translateY(-4px);
   background: rgba(14, 165, 233, 0.05);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
 }
 
 .agenda-date-block {
@@ -75,11 +76,22 @@
 .agenda-btn {
   width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid var(--glass-border);
-  background: rgba(255,255,255,0.05);
+  background: var(--glass-surface);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-sec);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: all 0.3s var(--easing); font-size: 14px;
 }
 
-.agenda-btn:hover { border-color: var(--accent); color: var(--accent); }
+.agenda-btn:hover {
+  border-color: var(--accent); color: var(--accent);
+  background: rgba(14, 165, 233, 0.08);
+  transform: scale(1.08);
+}
+
+@media (max-width: 480px) {
+  .agenda-card { padding: 20px; }
+  .agenda-date-num { font-size: 32px; }
+  .agenda-card h4 { font-size: 15px; }
+}
