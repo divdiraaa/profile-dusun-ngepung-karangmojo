@@ -49,16 +49,39 @@
         </div>
       </div>
 
-      <!-- Right: Map -->
-      <div class="map-embed" data-aos="fade-left">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31647.13!2d110.5945!3d-8.1487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3d5d57e4a4b1%3A0x1234!2sTanjungsari%2C%20Gunungkidul%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Lokasi Desa Ngepung, Tanjungsari, Gunung Kidul">
-        </iframe>
+      <!-- Right: Form Aspirasi -->
+      <div class="aspirasi-box" data-aos="fade-left">
+        <h3 class="aspirasi-title">Formulir Aspirasi Warga</h3>
+        <p class="aspirasi-desc">Punya pertanyaan, usulan, atau laporan? Sampaikan langsung kepada Pemerintah Padukuhan melalui form di bawah ini.</p>
+        <form class="aspirasi-form" onsubmit="event.preventDefault(); alert('Terima kasih, aspirasi Anda telah terkirim!');">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="No. WhatsApp / Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="4" placeholder="Tulis pesan atau aduan Anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn-accent" style="width: 100%; border: none; cursor: pointer;">Kirim Pesan <i class="bi bi-send-fill" style="margin-left:8px;"></i></button>
+        </form>
       </div>
+
+    </div>
+
+    <!-- Full Width Map -->
+    <div class="map-embed-full" data-aos="fade-up" style="margin-top: 48px; border-radius: 20px; overflow: hidden; height: 350px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31647.13!2d110.5945!3d-8.1487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3d5d57e4a4b1%3A0x1234!2sTanjungsari%2C%20Gunungkidul%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokasi Desa Ngepung, Tanjungsari, Gunung Kidul">
+      </iframe>
+    </div>
 
     </div>
   </div>

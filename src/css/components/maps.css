@@ -133,6 +133,68 @@
   filter: grayscale(0.4) contrast(1.1);
 }
 
+/* ==========================================================
+   FORM ASPIRASI WARGA
+========================================================== */
+.aspirasi-box {
+  background: var(--glass-bg-lt);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.aspirasi-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.aspirasi-desc {
+  font-size: 14px;
+  color: var(--text-sec);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.aspirasi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.06);
+}
+
+.map-embed-full {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
 @media (max-width: 800px) {
   .maps-grid { grid-template-columns: 1fr; }
   .map-embed { height: 320px; }

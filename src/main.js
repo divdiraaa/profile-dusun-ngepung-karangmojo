@@ -32,10 +32,14 @@ import Preloader from './components/preloader';
 import Navbar    from './components/navbar';
 import Hero      from './components/hero';
 import Tentang   from './components/tentang';
+import Youtube   from './components/youtube';
+import Aparatur  from './components/aparatur';
 import Services  from './components/services';
 import Potensi   from './components/potensi';
+import UMKM      from './components/umkm';
 import Statistik from './components/statistik';
-import Berita    from './components/berita';
+import DataDesa  from './components/datadesa';
+import Berita, { initBerita } from './components/berita';
 import Agenda    from './components/agenda';
 import Galeri    from './components/galeri';
 import Maps      from './components/maps';
@@ -50,9 +54,13 @@ app.innerHTML = `
   <main>
     ${Hero()}
     ${Tentang()}
+    ${Youtube()}
+    ${Aparatur()}
     ${Services()}
     ${Potensi()}
+    ${UMKM()}
     ${Statistik()}
+    ${DataDesa()}
     ${Berita()}
     ${Agenda()}
     ${Galeri()}
@@ -83,6 +91,22 @@ new Swiper('.agendaSwiper', {
     1024: { slidesPerView: 3 }
   }
 });
+
+new Swiper('.umkm-slider', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  navigation: { nextEl: '.umkm-next', prevEl: '.umkm-prev' },
+  pagination: { el: '.umkm-pagination', clickable: true },
+  breakpoints: {
+    640:  { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1280: { slidesPerView: 4 }
+  }
+});
+
+/* ── Init: Berita Swap ──────────────────────────────────────── */
+initBerita();
 
 /* ── Navbar: Scroll Behavior (with Top Bar) ─────────────────── */
 function initNavbar() {
