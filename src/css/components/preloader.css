@@ -25,6 +25,7 @@
   letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--text-meta);
+  animation: fadeInUp 0.6s var(--ease-out) both;
 }
 
 .preloader-logo span {
@@ -33,21 +34,27 @@
 
 .preloader-bar {
   width: 120px;
-  height: 1px;
+  height: 2px;
   background: var(--divider);
   border-radius: 1px;
   overflow: hidden;
+  animation: fadeInUp 0.6s var(--ease-out) 0.2s both;
 }
 
 .preloader-bar-inner {
   height: 100%;
   width: 0%;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), #38bdf8);
   border-radius: 1px;
   animation: preload 1.2s var(--easing) forwards;
 }
 
 @keyframes preload {
-  0%   { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
