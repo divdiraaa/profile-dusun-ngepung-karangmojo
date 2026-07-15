@@ -2,8 +2,8 @@
    MAPS & KONTAK
 ========================================================== */
 .maps-section {
-  background: var(--bg);
-  border-top: 1px solid var(--divider);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--glass-border);
 }
 
 .maps-grid {
@@ -14,8 +14,11 @@
 }
 
 .contact-info-box {
-  background: var(--glass-bg);
+  background: var(--glass-deep);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
+  border-top: 2px solid var(--accent);
   border-radius: var(--radius);
   padding: 40px;
 }
@@ -40,6 +43,11 @@
   gap: 16px;
   padding: 16px 0;
   border-bottom: 1px solid var(--divider);
+  transition: all 0.2s var(--easing);
+}
+
+.contact-item:hover {
+  padding-left: 4px;
 }
 
 .contact-item:last-of-type { border-bottom: none; }
@@ -55,6 +63,13 @@
   color: var(--accent);
   font-size: 16px;
   flex-shrink: 0;
+  transition: all 0.3s var(--easing);
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.06);
 }
 
 .contact-detail h5 {
@@ -84,7 +99,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
+  background: var(--glass-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +112,9 @@
 .social-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
-  transform: translateY(-2px);
+  background: rgba(14, 165, 233, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(14,165,233,0.15);
 }
 
 /* Map iframe */
@@ -106,6 +123,7 @@
   overflow: hidden;
   border: 1px solid var(--glass-border);
   height: 520px;
+  box-shadow: var(--shadow-soft);
 }
 
 .map-embed iframe {
@@ -118,4 +136,10 @@
 @media (max-width: 800px) {
   .maps-grid { grid-template-columns: 1fr; }
   .map-embed { height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .contact-info-box { padding: 28px; }
+  .map-embed { height: 260px; }
+  .contact-info-box h2 { font-size: clamp(24px, 6vw, 32px); margin-bottom: 24px; }
 }
