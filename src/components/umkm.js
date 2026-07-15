@@ -3,6 +3,12 @@ import '../css/components/umkm.css';
 
 const svgPlaceholder = (text) => `data:image/svg+xml;utf8,<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' fill='%230a1520' stroke='%2338bdf8' stroke-width='2' stroke-opacity='0.2'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-size='16'>${text}</text></svg>`;
 
+/* 
+  UNTUK MENGGANTI GAMBAR:
+  Ubah nilai imgUrl dari fungsi svgPlaceholder menjadi path gambar asli.
+  Contoh: imgUrl: "/src/assets/images/umkm/kerajinan-bambu.jpg"
+*/
+
 const umkmData = [
   {
     title: "Kerajinan Bambu Ngepung",

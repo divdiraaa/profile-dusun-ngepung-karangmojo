@@ -8,6 +8,10 @@ const svgImage = (title) => `data:image/svg+xml;utf8,<svg viewBox='0 0 800 600' 
    DATA BERITA DESA
    Tambahkan atau edit berita baru di dalam array ini. 
    Berita pada urutan pertama otomatis menjadi berita utama (besar).
+   
+   UNTUK MENGGANTI GAMBAR:
+   Ubah nilai imgUrl dari fungsi svgImage menjadi path gambar asli.
+   Contoh: imgUrl: "/src/assets/images/berita/panen-cabai.jpg"
 ========================================================== */
 export const berita = [
     {
