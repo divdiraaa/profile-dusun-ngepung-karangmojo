@@ -68,6 +68,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Body: Fixed photo background */
@@ -109,6 +110,7 @@ body::before {
 #app {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* ── Dynamic Orbs ───────────────────────────────────────────── */

@@ -14,7 +14,8 @@ const gallery = [
     { title: "UMKM Lokal", category: "UMKM", c1: "#0d0d1f", c2: "#10102e" },
     { title: "Trekking Bukit", category: "Petualangan", c1: "#0d1a10", c2: "#102015" },
     { title: "Balai Desa", category: "Desa", c1: "#1a1010", c2: "#201510" },
-    { title: "Sunset Karst", category: "Alam", c1: "#1f0d05", c2: "#2a1008" }
+    { title: "Sunset Karst", category: "Alam", c1: "#1f0d05", c2: "#2a1008" },
+    { title: "Pasar Tradisional", category: "Budaya", c1: "#1a1a1a", c2: "#2a2a2a" }
 ];
 
 const makeGalleryItem = (item) => `
