@@ -80,10 +80,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Background foto pantai dari Unsplash (free license) */
-  /* TODO: Ganti dengan foto asli dari /public/images/bg-main.jpg */
-  background-image:
-    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp');
+  /* 
+    PENGATURAN BACKGROUND UTAMA
+    Untuk mengganti gambar dengan foto lokal:
+  /* Background online dari Unsplash (Default) */
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp');
+
+  /* Background dari folder lokal Anda (Uncomment baris di bawah ini untuk menggunakan) */
+  /* background-image: url('/images/bg-main.jpg'); */
+
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
@@ -127,23 +132,35 @@ body::before {
 }
 
 #app::before {
-  width: 600px; height: 600px;
+  width: 600px;
+  height: 600px;
   background: rgba(14, 165, 233, 0.15);
-  top: -15%; left: -15%;
+  top: -15%;
+  left: -15%;
 }
 
 #app::after {
-  width: 700px; height: 700px;
+  width: 700px;
+  height: 700px;
   background: rgba(56, 189, 248, 0.12);
-  bottom: -20%; right: -20%;
+  bottom: -20%;
+  right: -20%;
   animation-delay: -12s;
   animation-duration: 30s;
 }
 
 @keyframes orbDrift {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(120px, 80px) scale(1.1); }
-  100% { transform: translate(-50px, 150px) scale(0.9); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(120px, 80px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50px, 150px) scale(0.9);
+  }
 }
 
 img,
@@ -180,7 +197,7 @@ a {
 
 .glass:hover {
   border-color: var(--glass-border-hover);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), var(--shadow-heavy);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), var(--shadow-heavy);
 }
 
 /* ── Glass Button ───────────────────────────────────────────── */
@@ -201,14 +218,19 @@ a {
   -webkit-backdrop-filter: blur(16px);
   transition: all 0.4s var(--ease-spring);
   white-space: nowrap;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
 
 .btn-glass::before {
-  content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transform: skewX(-25deg);
   transition: left 0.6s var(--easing);
 }
@@ -216,14 +238,18 @@ a {
 .btn-glass:hover {
   background: rgba(14, 165, 233, 0.15);
   border-color: var(--glass-border-accent);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 8px 32px rgba(14, 165, 233, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 32px rgba(14, 165, 233, 0.2);
   transform: translateY(-2px);
   color: #fff;
 }
 
-.btn-glass:hover::before { left: 150%; }
+.btn-glass:hover::before {
+  left: 150%;
+}
 
-.btn-glass:active { transform: translateY(0); }
+.btn-glass:active {
+  transform: translateY(0);
+}
 
 /* ── Accent Button ──────────────────────────────────────────── */
 .btn-accent {
@@ -240,26 +266,35 @@ a {
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.4s var(--ease-spring);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 8px 24px rgba(14, 165, 233, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 24px rgba(14, 165, 233, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 .btn-accent::before {
-  content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   transform: skewX(-25deg);
   transition: left 0.6s var(--easing);
 }
 
 .btn-accent:hover {
   transform: translateY(-3px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 40px rgba(14, 165, 233, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 12px 40px rgba(14, 165, 233, 0.5);
 }
 
-.btn-accent:hover::before { left: 150%; }
+.btn-accent:hover::before {
+  left: 150%;
+}
 
-.btn-accent:active { transform: translateY(0); }
+.btn-accent:active {
+  transform: translateY(0);
+}
 
 /* ── Section Padding ────────────────────────────────────────── */
 .section {
