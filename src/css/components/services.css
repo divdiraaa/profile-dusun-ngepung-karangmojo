@@ -61,9 +61,9 @@
 }
 
 .services-image-wrapper:hover {
-  transform: scale(1.02) rotate(-1deg);
+  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg) scale(1.03);
   border-color: var(--glass-border-accent);
-  box-shadow: 0 16px 40px rgba(14,165,233,0.12);
+  box-shadow: 0 30px 60px rgba(14,165,233,0.2), inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .services-image-actual {
@@ -96,9 +96,9 @@
 
 .service-card-dark:hover {
   border-color: var(--glass-border-accent);
-  background: rgba(14, 165, 233, 0.06);
-  transform: translateX(6px);
-  box-shadow: -4px 0 0 var(--accent);
+  background: rgba(14, 165, 233, 0.08);
+  transform: translateX(8px);
+  box-shadow: -4px 0 0 var(--accent), 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .service-num {

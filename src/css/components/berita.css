@@ -20,8 +20,9 @@
 }
 
 .news-featured:hover {
+  transform: perspective(1000px) rotateX(1deg) rotateY(-2deg) scale(1.01);
   border-color: var(--glass-border-accent);
-  box-shadow: var(--shadow-heavy);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .news-featured-bg {
@@ -94,8 +95,9 @@
 
 .news-list-item:hover {
   border-color: var(--glass-border-accent);
-  transform: translateX(4px);
-  background: rgba(14, 165, 233, 0.05);
+  transform: translateX(8px);
+  background: rgba(14, 165, 233, 0.08);
+  box-shadow: -4px 0 0 var(--accent), 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .news-list-item:hover .news-list-title {
