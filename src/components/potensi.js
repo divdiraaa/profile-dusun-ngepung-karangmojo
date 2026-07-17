@@ -17,7 +17,7 @@ const wisata = [
         desc: "Mata air alami yang menyegarkan, cocok untuk bersantai menikmati kesejukan alam.",
         location: "Ngrombo 1",
         rating: "4.8",
-        imgUrl: svgPlaceholder("Gambar Sendang Kali Bubar"),
+        imgUrl: "../public/images/wisata/sendang.jpg",
         imgAlt: "Sendang Kali Bubar",
         featured: true,
     },
@@ -27,7 +27,7 @@ const wisata = [
         desc: "Destinasi wisata keluarga dengan fasilitas kolam renang buatan yang asri dan air yang menyegarkan.",
         location: "Ponjong",
         rating: "4.7",
-        imgUrl: svgPlaceholder("Gambar Water Byur"),
+        imgUrl: "../public/images/wisata/water-byur.jpg",
         imgAlt: "Water Byur Ponjong",
     },
     {
@@ -36,7 +36,7 @@ const wisata = [
         desc: "Waduk buatan berpanorama indah. Jelajahi Embung Gentungan serta Embung Batur Agung di Karang Etan.",
         location: "Gentungan & Karang Etan",
         rating: "4.8",
-        imgUrl: svgPlaceholder("Gambar Embung"),
+        imgUrl: "../public/images/wisata/embung-batur.jpg",
         imgAlt: "Embung Gentungan",
     },
     {
@@ -45,7 +45,7 @@ const wisata = [
         desc: "Potensi budaya lokal yang kental dan dikembangkan melalui pelestarian kesenian oleh para warga desa.",
         location: "Padukuhan Ngepung",
         rating: "5.0",
-        imgUrl: svgPlaceholder("Gambar Kelompok Seni"),
+        imgUrl: "../public/images/wisata/kelompok-seni.jpg",
         imgAlt: "Kelompok Seni",
     },
     {
@@ -54,7 +54,7 @@ const wisata = [
         desc: "Potensi agrikultur unggulan penanaman cabai. Rutin mengadakan pelatihan kelompok tani (ex: 21 Juli).",
         location: "Padukuhan Ngepung",
         rating: "4.9",
-        imgUrl: svgPlaceholder("Gambar Pertanian Cabai"),
+        imgUrl: "../public/images/wisata/sentra-cabai.jpg",
         imgAlt: "Pertanian Cabai",
     }
 ];

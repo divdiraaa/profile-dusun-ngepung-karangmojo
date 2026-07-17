@@ -84,7 +84,7 @@ body {
     PENGATURAN BACKGROUND UTAMA
     Untuk mengganti gambar dengan foto lokal:
   /* Background online dari Unsplash (Default) */
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp');
+  background-image: "/src/assets/images/saker.jpg";
 
   /* Background dari folder lokal Anda (Uncomment baris di bawah ini untuk menggunakan) */
   /* background-image: url('/images/bg-main.jpg'); */

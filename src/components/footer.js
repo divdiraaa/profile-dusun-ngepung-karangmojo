@@ -5,25 +5,21 @@ const navLinks = [
     { name: "Beranda", href: "#hero" },
     { name: "Tentang Desa", href: "#tentang" },
     { name: "Destinasi Wisata", href: "#potensi" },
-    { name: "Layanan Publik", href: "#layanan" },
-    { name: "Berita", href: "#berita" },
     { name: "Agenda", href: "#agenda" },
     { name: "Galeri", href: "#galeri" },
 ];
 
 const wisataLinks = [
-    { name: "Pantai Mesra (Ngrawe)", href: "#potensi" },
-    { name: "Pantai Kukup", href: "#potensi" },
-    { name: "Geopark Gunung Sewu", href: "#potensi" },
-    { name: "Cave Tubing", href: "#potensi" },
-    { name: "Trekking Bukit", href: "#potensi" },
+    { name: "Sendang Kali Bubar", href: "#potensi" },
+    { name: "Embung Gentungan", href: "#potensi" },
+    { name: "Kelompok Seni", href: "#potensi" },
+    { name: "Pertanian Cabai", href: "#potensi" },
+    { name: "Potensi Ngepung", href: "#potensi" },
 ];
 
 const infoLinks = [
     { name: "Jam Layanan", href: "#maps" },
-    { name: "Kontak Desa", href: "#maps" },
-    { name: "Transparansi APBDes", href: "#layanan" },
-    { name: "Pengumuman Desa", href: "#berita" },
+    { name: "Kontak Desa", href: "#maps" }
 ];
 
 export default function Footer() {

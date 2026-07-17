@@ -29,21 +29,16 @@ import GLightbox from 'glightbox';
 
 /* ── Components ─────────────────────────────────────────────── */
 import Preloader from './components/preloader';
-import Navbar    from './components/navbar';
-import Hero      from './components/hero';
-import Tentang   from './components/tentang';
-import Youtube   from './components/youtube';
-import Aparatur  from './components/aparatur';
-import Services  from './components/services';
-import Potensi   from './components/potensi';
-import UMKM      from './components/umkm';
-import Statistik from './components/statistik';
-import DataDesa  from './components/datadesa';
-import Berita, { initBerita } from './components/berita';
-import Agenda    from './components/agenda';
-import Galeri    from './components/galeri';
-import Maps      from './components/maps';
-import Footer    from './components/footer';
+import Navbar from './components/navbar';
+import Hero from './components/hero';
+import Tentang from './components/tentang';
+import Youtube from './components/youtube';
+import Aparatur from './components/aparatur';
+import Potensi from './components/potensi';
+import UMKM from './components/umkm';
+import Galeri from './components/galeri';
+import Maps from './components/maps';
+import Footer from './components/footer';
 
 /* ── Render ─────────────────────────────────────────────────── */
 const app = document.getElementById('app');
@@ -56,12 +51,8 @@ app.innerHTML = `
     ${Tentang()}
     ${Youtube()}
     ${Aparatur()}
-    ${Services()}
     ${Potensi()}
     ${UMKM()}
-    ${Statistik()}
-    ${DataDesa()}
-    ${Berita()}
     ${Agenda()}
     ${Galeri()}
     ${Maps()}
@@ -77,20 +68,6 @@ window.addEventListener('resize', () => AOS.refresh());
 /* ── Init: GLightbox ────────────────────────────────────────── */
 GLightbox({ selector: '.galeri-item', touchNavigation: true });
 
-/* ── Init: Swiper Agenda ────────────────────────────────────── */
-new Swiper('.agendaSwiper', {
-  modules: [Navigation, Pagination, Autoplay],
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: { delay: 3500, disableOnInteraction: false },
-  navigation: { nextEl: '.agenda-next', prevEl: '.agenda-prev' },
-  pagination: { el: '.agenda-pagination', clickable: true, type: 'bullets' },
-  breakpoints: {
-    640:  { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
 
 new Swiper('.umkm-slider', {
   slidesPerView: 1,
@@ -99,14 +76,12 @@ new Swiper('.umkm-slider', {
   navigation: { nextEl: '.umkm-next', prevEl: '.umkm-prev' },
   pagination: { el: '.umkm-pagination', clickable: true },
   breakpoints: {
-    640:  { slidesPerView: 2 },
+    640: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
     1280: { slidesPerView: 4 }
   }
 });
 
-/* ── Init: Berita Swap ──────────────────────────────────────── */
-initBerita();
 
 /* ── Navbar: Scroll Behavior (with Top Bar) ─────────────────── */
 function initNavbar() {
@@ -210,7 +185,7 @@ initMobileMenu();
 /* ── Smooth Scroll ──────────────────────────────────────────── */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
+    a.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
@@ -258,12 +233,6 @@ function startCounters() {
   });
 }
 
-const statsSection = document.querySelector('#statistik');
-if (statsSection) {
-  new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { startCounters(); } });
-  }, { threshold: 0.4 }).observe(statsSection);
-}
 
 /* ── Back to Top ────────────────────────────────────────────── */
 function initBackToTop() {
@@ -311,14 +280,14 @@ window.addEventListener('error', e => console.warn('[Desa Ngepung]', e.message))
 /* ── Magnetic Buttons ───────────────────────────────────────── */
 function initMagneticButtons() {
   const magnets = document.querySelectorAll('.btn-accent, .btn-glass');
-  
+
   if (window.matchMedia('(pointer: fine)').matches) {
     magnets.forEach(btn => {
       btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        
+
         btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
       });
 
@@ -342,10 +311,10 @@ function initCustomCursor() {
     window.addEventListener('mousemove', (e) => {
       const posX = e.clientX;
       const posY = e.clientY;
-      
+
       dot.style.left = `${posX}px`;
       dot.style.top = `${posY}px`;
-      
+
       outline.animate({
         left: `${posX}px`,
         top: `${posY}px`
