@@ -53,7 +53,6 @@ app.innerHTML = `
     ${Aparatur()}
     ${Potensi()}
     ${UMKM()}
-    ${Agenda()}
     ${Galeri()}
     ${Maps()}
   </main>
@@ -68,17 +67,32 @@ window.addEventListener('resize', () => AOS.refresh());
 /* ── Init: GLightbox ────────────────────────────────────────── */
 GLightbox({ selector: '.galeri-item', touchNavigation: true });
 
+new Swiper('.potensi-slider', {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1.15,
+  centeredSlides: true,
+  spaceBetween: 16,
+  loop: true,
+  navigation: { nextEl: '.potensi-next', prevEl: '.potensi-prev' },
+  pagination: { el: '.potensi-pagination', clickable: true },
+  breakpoints: {
+    640: { slidesPerView: 2, centeredSlides: false, spaceBetween: 20 },
+    1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 24 }
+  }
+});
+
 
 new Swiper('.umkm-slider', {
+  modules: [Navigation, Pagination],
   slidesPerView: 1,
   spaceBetween: 24,
   loop: true,
   navigation: { nextEl: '.umkm-next', prevEl: '.umkm-prev' },
   pagination: { el: '.umkm-pagination', clickable: true },
   breakpoints: {
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-    1280: { slidesPerView: 4 }
+    640: { slidesPerView: 2, centeredSlides: false, spaceBetween: 24 },
+    1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 24 },
+    1280: { slidesPerView: 4, centeredSlides: false, spaceBetween: 24 }
   }
 });
 

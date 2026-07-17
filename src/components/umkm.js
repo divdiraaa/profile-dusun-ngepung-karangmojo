@@ -15,7 +15,7 @@ const umkmData = [
     category: "Kriya / Kerajinan",
     desc: "Berbagai macam perabotan rumah tangga dan suvenir cantik berbahan dasar bambu lokal berkualitas.",
     owner: "KWT Sekar Tanjung",
-    imgUrl: "../public/images/umkm/kerajinan.png"
+    imgUrl: "/images/umkm/kerajinan.png"
   },
   {
     title: "Olahan Sambal Cabai Lokal",

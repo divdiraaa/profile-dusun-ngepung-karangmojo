@@ -17,7 +17,7 @@ const wisata = [
         desc: "Mata air alami yang menyegarkan, cocok untuk bersantai menikmati kesejukan alam.",
         location: "Ngrombo 1",
         rating: "4.8",
-        imgUrl: "../public/images/wisata/sendang.jpg",
+        imgUrl: "/images/wisata/sendang.jpg",
         imgAlt: "Sendang Kali Bubar",
         featured: true,
     },
@@ -27,7 +27,7 @@ const wisata = [
         desc: "Destinasi wisata keluarga dengan fasilitas kolam renang buatan yang asri dan air yang menyegarkan.",
         location: "Ponjong",
         rating: "4.7",
-        imgUrl: "../public/images/wisata/water-byur.jpg",
+        imgUrl: "/images/wisata/water-byur.jpg",
         imgAlt: "Water Byur Ponjong",
     },
     {
@@ -36,7 +36,7 @@ const wisata = [
         desc: "Waduk buatan berpanorama indah. Jelajahi Embung Gentungan serta Embung Batur Agung di Karang Etan.",
         location: "Gentungan & Karang Etan",
         rating: "4.8",
-        imgUrl: "../public/images/wisata/embung-batur.jpg",
+        imgUrl: "/images/wisata/embung-batur.jpg",
         imgAlt: "Embung Gentungan",
     },
     {
@@ -45,7 +45,7 @@ const wisata = [
         desc: "Potensi budaya lokal yang kental dan dikembangkan melalui pelestarian kesenian oleh para warga desa.",
         location: "Padukuhan Ngepung",
         rating: "5.0",
-        imgUrl: "../public/images/wisata/kelompok-seni.jpg",
+        imgUrl: "/images/wisata/kelompok-seni.jpg",
         imgAlt: "Kelompok Seni",
     },
     {
@@ -54,31 +54,32 @@ const wisata = [
         desc: "Potensi agrikultur unggulan penanaman cabai. Rutin mengadakan pelatihan kelompok tani (ex: 21 Juli).",
         location: "Padukuhan Ngepung",
         rating: "4.9",
-        imgUrl: "../public/images/wisata/sentra-cabai.jpg",
+        imgUrl: "/images/wisata/sentra-cabai.jpg",
         imgAlt: "Pertanian Cabai",
     }
 ];
 
 const generateCards = () => {
     return wisata.map((item, i) => {
-        const isFeatured = item.featured;
         return `
-        <div class="dest-card${isFeatured ? ' dest-card-featured' : ''}" data-aos="fade-up" data-aos-delay="${i * 80}">
-            <div class="dest-img">
-                <img src="${item.imgUrl}" alt="${item.imgAlt}" loading="lazy" />
-                <div class="dest-img-overlay"></div>
-                <span class="dest-tag">${item.category}</span>
-                <div class="dest-rating"><i class="bi bi-star-fill" style="color:var(--accent);font-size:11px;"></i> ${item.rating}</div>
-            </div>
-            <div class="dest-body">
-                <h3>${item.title}</h3>
-                <p>${item.desc}</p>
-                <div class="dest-meta">
-                    <div class="dest-meta-loc">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span>${item.location}</span>
+        <div class="swiper-slide">
+            <div class="dest-card" data-aos="fade-up" data-aos-delay="${i * 80}">
+                <div class="dest-img">
+                    <img src="${item.imgUrl}" alt="${item.imgAlt}" loading="lazy" />
+                    <div class="dest-img-overlay"></div>
+                    <span class="dest-tag">${item.category}</span>
+                    <div class="dest-rating"><i class="bi bi-star-fill" style="color:var(--accent);font-size:11px;"></i> ${item.rating}</div>
+                </div>
+                <div class="dest-body">
+                    <h3>${item.title}</h3>
+                    <p>${item.desc}</p>
+                    <div class="dest-meta">
+                        <div class="dest-meta-loc">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>${item.location}</span>
+                        </div>
+                        <a href="#" class="dest-link"><i class="bi bi-arrow-up-right"></i></a>
                     </div>
-                    <a href="#" class="dest-link"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </div>`;
