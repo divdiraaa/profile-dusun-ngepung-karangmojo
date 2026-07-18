@@ -18,33 +18,33 @@ const umkmData = [
     imgUrl: "/images/umkm/kerajinan.png"
   },
   {
-    title: "Olahan Sambal Cabai Lokal",
+    title: "UMKM Peyek Mbak Yenni",
     category: "Kuliner",
-    desc: "Sambal botolan pedas mantap yang diolah dari cabai segar hasil panen petani Padukuhan Ngepung.",
-    owner: "Kelompok Tani Ngepung",
-    imgUrl: svgPlaceholder("Gambar Sambal Botol")
+    desc: "Keripik atau Peyek yang diolah langsung dari hasil bumi tanah Padukuhan Ngepung.",
+    owner: "Mbak Yenni",
+    imgUrl: "/images/umkm/umkm-peyek.jpg"
   },
   {
-    title: "Keripik Pisang Aneka Rasa",
-    category: "Makanan Ringan",
-    desc: "Camilan khas desa yang renyah dan gurih, tersedia dalam rasa manis, asin, dan balado.",
-    owner: "Ibu Maryani",
-    imgUrl: svgPlaceholder("Gambar Keripik Pisang")
+    title: "Pabrik Tahu Ngepung",
+    category: "Bahan Makanan Pokok",
+    desc: "Tahu yang diolah secara tradisional dari kedelai lokal, menjadi salah satu produk unggulan desa.",
+    owner: "Pak Yamin",
+    imgUrl: "/images/umkm/umkm-tahu.jpg"
   },
-  {
-    title: "Suvenir Kulit Kerang",
-    category: "Kriya / Suvenir",
-    desc: "Pernak-pernik hiasan dan aksesori berbahan dasar kulit kerang dari area pantai sekitar.",
-    owner: "Pemuda Karang Taruna",
-    imgUrl: svgPlaceholder("Gambar Suvenir Kerang")
-  },
-  {
-    title: "Gula Jawa Organik",
-    category: "Bahan Pangan",
-    desc: "Gula kelapa murni tanpa bahan pengawet, diproses secara tradisional oleh para penderes lokal.",
-    owner: "Paguyuban Penderes",
-    imgUrl: svgPlaceholder("Gambar Gula Jawa")
-  }
+  // {
+  //   title: "Suvenir Kulit Kerang",
+  //   category: "Kriya / Suvenir",
+  //   desc: "Pernak-pernik hiasan dan aksesori berbahan dasar kulit kerang dari area pantai sekitar.",
+  //   owner: "Pemuda Karang Taruna",
+  //   imgUrl: svgPlaceholder("Gambar Suvenir Kerang")
+  // },
+  // {
+  //   title: "Gula Jawa Organik",
+  //   category: "Bahan Pangan",
+  //   desc: "Gula kelapa murni tanpa bahan pengawet, diproses secara tradisional oleh para penderes lokal.",
+  //   owner: "Paguyuban Penderes",
+  //   imgUrl: svgPlaceholder("Gambar Gula Jawa")
+  // }
 ];
 
 const generateSlides = () => {

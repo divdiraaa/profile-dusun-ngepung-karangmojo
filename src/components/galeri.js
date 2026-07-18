@@ -5,63 +5,78 @@ const gallery = [
     {
         title: "Kader Kesehatan",
         category: "Kesehatan",
-        imgUrl: "public/images/galeri/kader-kesehatan.jpg"
+        imgUrl: "/images/galeri/kader-kesehatan.jpg"
     },
     {
         title: "Kegiatan Posyandu",
         category: "Kesehatan",
-        imgUrl: "public/images/galeri/kader-posyandu.jpg"
+        imgUrl: "/images/galeri/kader-posyandu.jpg"
     },
     {
         title: "Kenduri Warga",
         category: "Budaya",
-        imgUrl: "public/images/galeri/kenduri-1.jpg"
+        imgUrl: "/images/galeri/kenduri-1.jpg"
     },
     {
         title: "Kenduri Padukuhan",
         category: "Budaya",
-        imgUrl: "public/images/galeri/kenduri-2.jpg"
+        imgUrl: "/images/galeri/kenduri-2.jpg"
     },
     {
         title: "Latihan Karawitan",
         category: "Seni Budaya",
-        imgUrl: "public/images/galeri/latihan-karawitan.jpg"
+        imgUrl: "/images/galeri/latihan-karawitan.jpg"
     },
     {
         title: "Pertemuan KRT",
         category: "Kemasyarakatan",
-        imgUrl: "public/images/galeri/pertemuan-krt.jpg"
+        imgUrl: "/images/galeri/pertemuan-krt.jpg"
     },
     {
         title: "Senam Bersama",
         category: "Olahraga",
-        imgUrl: "public/images/galeri/senam-bersama.jpg"
+        imgUrl: "/images/galeri/senam-bersama.jpg"
     },
     {
         title: "Senam Bersama Warga",
         category: "Olahraga",
-        imgUrl: "public/images/galeri/senam-bersama2.jpg"
+        imgUrl: "/images/galeri/senam-bersama2.jpg"
     },
     {
         title: "Thoklik",
-        category: "Keamanan",
-        imgUrl: "public/images/galeri/thoklik.jpg"
+        category: "Kesenian",
+        imgUrl: "/images/galeri/thoklik.jpg"
     },
     {
         title: "Turnamen Voli",
         category: "Olahraga",
-        imgUrl: "public/images/galeri/turnamen-volly.jpg"
+        imgUrl: "/images/galeri/turnamen-volly.jpg"
     },
     {
         title: "UMKM Peyek",
         category: "UMKM",
-        imgUrl: "public/images/galeri/umkm-peyek.jpg"
+        imgUrl: "/images/umkm/umkm-peyek.jpg"
     },
     {
         title: "UMKM Tahu",
         category: "UMKM",
-        imgUrl: "public/images/galeri/umkm-tahu.jpg"
-    }
+        imgUrl: "/images/umkm/umkm-tahu.jpg"
+    },
+    {
+        title: "Panen Singkong",
+        category: "Pertanian",
+        imgUrl: "/images/galeri/panen-tela.jpeg"
+    },
+    {
+        title: "Anak Dusun Ngepung",
+        category: "Kemasyarakatan",
+        imgUrl: "/images/galeri/anak-dusun-ngepung.jpeg"
+    },
+    {
+        title: "Jaga Pos Ronda",
+        category: "Kemasyarakatan",
+        imgUrl: "/images/galeri/jaga-pos-ronda.jpeg"
+    },
 ];
 
 const makeGalleryItem = (item) => `

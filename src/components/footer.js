@@ -13,7 +13,8 @@ const wisataLinks = [
     { name: "Sendang Kali Bubar", href: "#potensi" },
     { name: "Embung Gentungan", href: "#potensi" },
     { name: "Kelompok Seni", href: "#potensi" },
-    { name: "Pertanian Cabai", href: "#potensi" },
+    { name: "Pertanian Kacang", href: "#potensi" },
+    { name: "Pertanian Singkong", href: "#potensi" },
     { name: "Potensi Ngepung", href: "#potensi" },
 ];
 
